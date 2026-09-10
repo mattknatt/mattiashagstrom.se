@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="1600" height="1100" role="img" aria-label="Placeholder for the musician photo">
+  <defs>
+    <linearGradient id="warmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1408"/>
+      <stop offset="45%" stop-color="#4a1f18"/>
+      <stop offset="100%" stop-color="#120a08"/>
+    </linearGradient>
+    <radialGradient id="warmSpot" cx="0.30" cy="0.26" r="0.78">
+      <stop offset="0%" stop-color="#f5b544" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#e8663c" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#e8663c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="warmGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#f5b544" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#warmBg)"/>
+  <rect width="1600" height="1100" fill="url(#warmGrid)"/>
+  <rect width="1600" height="1100" fill="url(#warmSpot)"/>
+
+  <!-- decorative: figure at a mic, kept to the left edge -->
+  <g fill="none" stroke="#f5b544" stroke-opacity="0.26" stroke-width="3" stroke-linecap="round">
+    <circle cx="250" cy="360" r="78"/>
+    <path d="M140 620c0-82 49-140 110-140s110 58 110 140"/>
+    <path d="M452 250v290" stroke-opacity="0.18"/>
+    <rect x="420" y="192" width="64" height="98" rx="32" stroke-opacity="0.22"/>
+  </g>
+
+  <!-- decorative: waveform, kept to the right edge -->
+  <g stroke="#f5b544" stroke-opacity="0.30" stroke-width="7" stroke-linecap="round">
+    <path d="M1240 550v-70M1300 550v-150M1360 550v-46M1420 550v-200M1480 550v-100"/>
+    <path d="M1240 550v70M1300 550v150M1360 550v46M1420 550v200M1480 550v100"/>
+  </g>
+
+</svg>

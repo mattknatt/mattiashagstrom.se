@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="1600" height="1100" role="img" aria-label="Placeholder for the developer photo">
+  <defs>
+    <linearGradient id="coolBg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#07202a"/>
+      <stop offset="45%" stop-color="#141a3a"/>
+      <stop offset="100%" stop-color="#08090f"/>
+    </linearGradient>
+    <radialGradient id="coolSpot" cx="0.70" cy="0.26" r="0.78">
+      <stop offset="0%" stop-color="#63d3e8" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#7a8dff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#7a8dff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="coolGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#63d3e8" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#coolBg)"/>
+  <rect width="1600" height="1100" fill="url(#coolGrid)"/>
+  <rect width="1600" height="1100" fill="url(#coolSpot)"/>
+
+  <!-- decorative: figure at a desk, kept to the right edge -->
+  <g fill="none" stroke="#63d3e8" stroke-opacity="0.26" stroke-width="3" stroke-linecap="round">
+    <circle cx="1350" cy="360" r="78"/>
+    <path d="M1240 620c0-82 49-140 110-140s110 58 110 140"/>
+    <rect x="1160" y="640" width="380" height="16" rx="8" stroke-opacity="0.20"/>
+  </g>
+
+  <!-- decorative: brackets and code lines, kept to the left edge -->
+  <g stroke="#63d3e8" stroke-opacity="0.30" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M200 300l-70 90 70 90"/>
+    <path d="M420 300l70 90-70 90"/>
+    <path d="M330 270l-60 240" stroke-opacity="0.20"/>
+  </g>
+  <g stroke="#7a8dff" stroke-opacity="0.24" stroke-width="8" stroke-linecap="round">
+    <path d="M130 600h180M130 646h270M130 692h130"/>
+  </g>
+
+</svg>

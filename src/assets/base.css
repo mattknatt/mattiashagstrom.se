@@ -1,0 +1,107 @@
+/* ---------------------------------------------------------------
+   Design tokens + reset
+   Warm palette = the musician side. Cool palette = the developer side.
+---------------------------------------------------------------- */
+
+:root {
+  /* Neutrals */
+  --ink-900: #08080b;
+  --ink-800: #0d0d12;
+  --ink-700: #141420;
+  --ink-600: #1c1c2a;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.20);
+
+  --text: #f2efe9;
+  --text-dim: #a8a49c;
+  --text-faint: #6f6c67;
+
+  /* Musician — stage light */
+  --warm-1: #f5b544;
+  --warm-2: #e8663c;
+  --warm-glow: rgba(245, 181, 68, 0.35);
+
+  /* Developer — terminal glass */
+  --cool-1: #63d3e8;
+  --cool-2: #7a8dff;
+  --cool-glow: rgba(99, 211, 232, 0.30);
+
+  /* Type */
+  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Rhythm */
+  --pad-page: clamp(1.25rem, 4vw, 4rem);
+  --gap-section: clamp(5rem, 12vh, 9rem);
+  --radius: 14px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--ink-900);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cool-1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
