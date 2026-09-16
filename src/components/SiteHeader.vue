@@ -25,10 +25,9 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
       </RouterLink>
 
       <nav class="nav" aria-label="Main">
-        <a href="#work">Work</a>
-        <a href="#crafts">Crafts</a>
-        <RouterLink to="/about">About</RouterLink>
-        <a href="#contact" class="nav__cta">Get in touch</a>
+        <RouterLink to="/musician">Musician</RouterLink>
+        <RouterLink to="/developer">Developer</RouterLink>
+        <RouterLink to="/#contact" class="nav__cta">Get in touch</RouterLink>
       </nav>
     </div>
   </header>

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import SplitReveal from '@/components/SplitReveal.vue'
 
 /* ---- Hero: swap the two `image` paths for your own photos ---- */
@@ -8,7 +9,7 @@ const musician = {
   label: 'Musician',
   line: 'Drummer, songwriter and producer.',
   cta: 'Hear the music',
-  href: '#work'
+  href: '/musician'
 }
 
 const developer = {
@@ -17,13 +18,14 @@ const developer = {
   label: 'Developer',
   line: 'Software developer building fullstack applications.',
   cta: 'See the work',
-  href: '#work'
+  href: '/developer'
 }
 
 const crafts = [
   {
     tone: 'warm',
     kicker: 'Music',
+    to: '/musician',
     title: 'Songs, sessions, sound design',
     body:
       'Placeholder copy — describe the instruments you play, the rooms you record in, and the kind of collaboration you take on.',
@@ -32,6 +34,7 @@ const crafts = [
   {
     tone: 'cool',
     kicker: 'Code',
+    to: '/developer',
     title: 'Products, platforms, tooling',
     body:
       'Placeholder copy — describe your stack, the systems you have shipped, and the kind of engagements you are open to.',
@@ -39,13 +42,6 @@ const crafts = [
   },
 ]
 
-/* ---- Work: replace with real projects and releases ---- */
-const work = [
-  { tone: 'warm', type: 'Release', title: 'Project title one', meta: 'Album · 2025', note: 'Placeholder' },
-  { tone: 'cool', type: 'Product', title: 'Project title two', meta: 'Web app · 2025', note: 'Placeholder' },
-  { tone: 'cool', type: 'Open source', title: 'Project title three', meta: 'Library · 2024', note: 'Placeholder' },
-  { tone: 'warm', type: 'Score', title: 'Project title four', meta: 'Film · 2024', note: 'Placeholder' },
-]
 </script>
 
 <template>
@@ -71,8 +67,8 @@ const work = [
           writing music, and what somebody landing here should do next.
         </p>
         <div class="intro__actions">
-          <a class="btn btn--solid" href="#work">See selected work</a>
-          <a class="btn" href="#contact">Start a conversation</a>
+          <RouterLink class="btn btn--solid" to="/musician">Hear the music</RouterLink>
+          <RouterLink class="btn" to="/developer">See the code</RouterLink>
         </div>
       </div>
     </section>
@@ -80,38 +76,21 @@ const work = [
     <!-- Crafts -->
     <section id="crafts" class="section crafts">
       <div class="shell crafts__grid">
-        <article v-for="craft in crafts" :key="craft.kicker" class="craft" :data-tone="craft.tone">
+        <RouterLink
+          v-for="craft in crafts"
+          :key="craft.kicker"
+          :to="craft.to"
+          class="craft"
+          :data-tone="craft.tone"
+        >
           <p class="craft__kicker">{{ craft.kicker }}</p>
           <h3 class="craft__title">{{ craft.title }}</h3>
           <p class="craft__body">{{ craft.body }}</p>
           <ul class="craft__points">
             <li v-for="point in craft.points" :key="point">{{ point }}</li>
           </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="section work">
-      <div class="shell">
-        <p class="eyebrow">Selected work</p>
-        <h2 class="section-title">Records and releases.</h2>
-
-        <iframe data-testid="embed-iframe" style="border-radius:12px"
-         src="https://open.spotify.com/embed/playlist/7IglWfa9LnihddunNv0cYS?utm_source=generator&theme=0&si=9ddf05d9256e4c65"
-          width="100%" height="352" frameBorder="0" allowfullscreen=""
-           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-          </iframe>
-        <div class="work__grid">
-          <article v-for="item in work" :key="item.title" class="card" :data-tone="item.tone">
-            <div class="card__thumb">
-              <span class="card__thumb-note">{{ item.note }}</span>
-            </div>
-            <p class="card__type">{{ item.type }}</p>
-            <h3 class="card__title">{{ item.title }}</h3>
-            <p class="card__meta">{{ item.meta }}</p>
-          </article>
-        </div>
+          <span class="craft__arrow" aria-hidden="true">↗</span>
+        </RouterLink>
       </div>
     </section>
 
@@ -151,11 +130,32 @@ const work = [
 
 .craft {
   position: relative;
+  display: block;
   padding: clamp(1.6rem, 3vw, 2.5rem);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 60%);
   overflow: hidden;
+  transition: border-color 0.25s var(--ease), transform 0.35s var(--ease);
+}
+
+.craft:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-4px);
+}
+
+.craft__arrow {
+  position: absolute;
+  top: clamp(1.4rem, 3vw, 2.2rem);
+  right: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--text-faint);
+  font-size: 1.1rem;
+  transition: color 0.2s var(--ease), transform 0.25s var(--ease);
+}
+
+.craft:hover .craft__arrow {
+  color: var(--text);
+  transform: translate(2px, -2px);
 }
 
 .craft::before {
@@ -214,65 +214,6 @@ const work = [
   border: 1px solid var(--line);
   border-radius: 100px;
   font-size: 0.78rem;
-  color: var(--text-dim);
-}
-
-/* ---------- work ---------- */
-.work__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem 1.25rem;
-  margin-top: 2.75rem;
-}
-
-.card__thumb {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius);
-  border: 1px dashed var(--line-strong);
-  margin-bottom: 1rem;
-  transition: transform 0.35s var(--ease);
-}
-
-.card:hover .card__thumb {
-  transform: translateY(-4px);
-}
-
-.card[data-tone='warm'] .card__thumb {
-  background: radial-gradient(90% 90% at 30% 20%, rgba(245, 181, 68, 0.22), transparent 70%),
-    var(--ink-700);
-}
-
-.card[data-tone='cool'] .card__thumb {
-  background: radial-gradient(90% 90% at 70% 20%, rgba(99, 211, 232, 0.2), transparent 70%),
-    var(--ink-700);
-}
-
-.card__thumb-note {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.card__type {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.card__title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  margin-top: 0.35rem;
-}
-
-.card__meta {
-  font-size: 0.85rem;
   color: var(--text-dim);
 }
 

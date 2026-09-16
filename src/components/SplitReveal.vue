@@ -124,11 +124,6 @@ function onKeydown(event) {
   event.preventDefault()
 }
 
-function snapTo(target) {
-  stopHint()
-  tweenTo(target, 700)
-}
-
 /* ---------- copy fade ----------
    Each side's body copy fades out as the divider closes in on it, so the text
    is never sliced mid-word. Only the centred name is meant to be cut. */
@@ -237,16 +232,6 @@ onBeforeUnmount(stopHint)
           </svg>
         </span>
         <span class="handle__hint">drag</span>
-      </button>
-    </div>
-
-    <div class="controls">
-      <button type="button" class="controls__btn controls__btn--dev" @click="snapTo(0)">
-        Show the developer
-      </button>
-      <button type="button" class="controls__btn" @click="snapTo(50)">Both</button>
-      <button type="button" class="controls__btn controls__btn--mus" @click="snapTo(100)">
-        Show the musician
       </button>
     </div>
   </section>
@@ -497,40 +482,6 @@ onBeforeUnmount(stopHint)
 
 .stage.is-dragging .handle__hint {
   opacity: 0;
-}
-
-/* ---------- controls under the stage ---------- */
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1.15rem var(--pad-page) 0;
-}
-
-.controls__btn {
-  padding: 0.5rem 1.05rem;
-  border-radius: 100px;
-  border: 1px solid var(--line);
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  transition: color 0.22s var(--ease), border-color 0.22s var(--ease),
-    background-color 0.22s var(--ease);
-}
-
-.controls__btn:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.controls__btn--mus:hover {
-  color: var(--warm-1);
-  border-color: rgba(245, 181, 68, 0.5);
-}
-
-.controls__btn--dev:hover {
-  color: var(--cool-1);
-  border-color: rgba(99, 211, 232, 0.5);
 }
 
 /* ---------- narrow screens ----------

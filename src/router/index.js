@@ -10,14 +10,22 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/musician',
+      name: 'musician',
+      component: () => import('../views/MusicianView.vue'),
+    },
+    {
+      path: '/developer',
+      name: 'developer',
+      component: () => import('../views/DeveloperView.vue'),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    // Instant: a smooth scroll gets cancelled by layout shifts while the new view mounts.
+    if (to.hash) return { el: to.hash, top: 92, behavior: 'instant' }
+    return { top: 0, behavior: 'instant' }
+  },
 })
 
 export default router
