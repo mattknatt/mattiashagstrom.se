@@ -485,7 +485,8 @@ onBeforeUnmount(stopHint)
 }
 
 /* ---------- narrow screens ----------
-   Stack the two copy blocks vertically so they never collide at the divider. */
+   Both copy blocks sit on the same baseline; keep them narrow enough that they
+   never meet at the divider. */
 @media (max-width: 720px) {
   .stage {
     height: clamp(560px, 88vh, 760px);
@@ -493,15 +494,8 @@ onBeforeUnmount(stopHint)
   }
 
   .copy {
-    width: min(24ch, 44%);
-  }
-
-  .copy--left {
-    bottom: clamp(7.5rem, 22vh, 11rem);
-  }
-
-  .copy--right {
-    bottom: clamp(3.5rem, 9vh, 5rem);
+    width: min(22ch, 42%);
+    bottom: clamp(4rem, 10vh, 6rem);
   }
 
   .center__name {
