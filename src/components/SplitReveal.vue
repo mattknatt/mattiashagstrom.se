@@ -3,7 +3,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const props = defineProps({
   name: { type: String, default: 'Mattias Hagström' },
-  kicker: { type: String, default: 'developer & musician' },
+  kicker: { type: String, default: 'musician & developer' },
   musician: { type: Object, required: true },
   developer: { type: Object, required: true },
   /** Opening divider position, 0 = all developer, 100 = all musician. */
@@ -144,8 +144,8 @@ const developerCopy = computed(() => {
 
 /* ---------- a11y labels ---------- */
 const valueText = computed(() => {
-  if (pos.value >= 92) return 'Musician'
-  if (pos.value <= 8) return 'Developer'
+  if (pos.value >= 92) return 'Developer'
+  if (pos.value <= 8) return 'Musician'
   return 'Both — musician and developer'
 })
 

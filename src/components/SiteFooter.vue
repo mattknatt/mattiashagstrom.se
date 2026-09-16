@@ -2,10 +2,10 @@
 const year = new Date().getFullYear()
 
 const links = [
-  { label: 'GitHub', href: '#' },
-  { label: 'Spotify', href: '#' },
-  { label: 'SoundCloud', href: '#' },
-  { label: 'LinkedIn', href: '#' },
+  { label: 'GitHub', href: 'https://github.com/mattknatt' },
+  { label: 'Spotify', href: 'https://open.spotify.com/playlist/7IglWfa9LnihddunNv0cYS?si=db81c3d46fec49bd' },
+  { label: 'Instagram', href: 'https://instagram.com/mattiashagstrommusic' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mattias-hagstrom/' },
 ]
 </script>
 
@@ -20,7 +20,7 @@ const links = [
         </li>
       </ul>
 
-      <p class="site-footer__meta">© {{ year }} — built between takes</p>
+      <p class="site-footer__meta">© {{ year }}</p>
     </div>
   </footer>
 </template>

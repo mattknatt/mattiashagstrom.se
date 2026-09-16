@@ -4,22 +4,20 @@ import SplitReveal from '@/components/SplitReveal.vue'
 /* ---- Hero: swap the two `image` paths for your own photos ---- */
 const musician = {
   image: '/images/musician.jpg',
-  alt: 'Placeholder — replace with a photo of Mattias playing music',
-  label: 'On stage',
-  line: 'Writing, playing and producing. Records made slowly, mixed loudly.',
+  alt: 'Picture of Mattias before a concert',
+  label: 'Musician',
+  line: 'Drummer, songwriter and producer.',
   cta: 'Hear the music',
-  href: '#work',
-  note: 'swap for /images/musician.jpg',
+  href: '#work'
 }
 
 const developer = {
   image: '/images/developer.png',
-  alt: 'Placeholder — replace with a photo of Mattias at work developing software',
-  label: 'At the keyboard',
-  line: 'Building software that stays understandable long after launch day.',
+  alt: 'Mattias as pixelart',
+  label: 'Developer',
+  line: 'Software developer building fullstack applications.',
   cta: 'See the work',
-  href: '#work',
-  note: 'swap for /images/developer.jpg',
+  href: '#work'
 }
 
 const crafts = [
@@ -54,7 +52,7 @@ const work = [
   <main>
     <SplitReveal
       name="Mattias Hagström"
-      kicker="developer & musician"
+      kicker="musician & developer"
       :musician="musician"
       :developer="developer"
       :start="50"
@@ -123,8 +121,8 @@ const work = [
         <p class="eyebrow">Contact</p>
         <h2 class="section-title">Got a project, a track,<br />or something in between?</h2>
         <p class="lede">Placeholder copy — say what you want people to reach out about.</p>
-        <a class="btn btn--solid contact__btn" href="mailto:hello@example.com">
-          hello@example.com
+        <a class="btn btn--solid contact__btn" href="mailto:hello@mattiashagstrom.se">
+          hello@mattiashagstrom.se
         </a>
       </div>
     </section>
