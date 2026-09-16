@@ -56,8 +56,8 @@ const developer = {
     <section id="contact" class="section contact">
       <div class="shell contact__inner">
         <p class="eyebrow">Contact</p>
-        <h2 class="section-title">Got a project, a track,<br />or something in between?</h2>
-        <p class="lede">Placeholder copy — say what you want people to reach out about.</p>
+        <h2 class="section-title">Got a project, a track,<br />or just want to say hi?</h2>
+        <p class="lede">Please send me an email, I'd be happy to chat.</p>
         <a class="btn btn--solid contact__btn" href="mailto:hello@mattiashagstrom.se">
           hello@mattiashagstrom.se
         </a>
