@@ -60,7 +60,7 @@ const links = {
       <div class="shell">
         <p class="eyebrow">01 — Selected work</p>
         <h2 class="section-title">Records and releases.</h2>
-        <p class="lede">Records I've played on. Drag to spin, click a cover to open it.</p>
+        <p class="lede">Records I've worked on. Drag to spin, click a cover to open it.</p>
 
         <AlbumCarousel class="mus-carousel" :ids="albumIds" />
 
@@ -69,7 +69,7 @@ const links = {
           title="Spotify playlist"
           src="https://open.spotify.com/embed/playlist/7IglWfa9LnihddunNv0cYS"
           width="100%"
-          height="352"
+          height="600"
           frameborder="0"
           allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -83,11 +83,10 @@ const links = {
       <div class="shell">
         <div class="contact-card">
           <div>
-            <h2 class="contact-card__title">Got a track in mind?</h2>
+            <h2 class="contact-card__title">Want to work with me?</h2>
             <p class="contact-card__text">Open to sessions, co-writes, production and live work.</p>
           </div>
           <div class="contact-card__actions">
-            <a class="btn" :href="links.spotify" target="_blank" rel="noopener">Spotify ↗</a>
             <a class="btn btn--solid" href="mailto:hello@mattiashagstrom.se">Email me</a>
           </div>
         </div>
