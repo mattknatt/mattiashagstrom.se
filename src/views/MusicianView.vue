@@ -1,10 +1,22 @@
 <script setup>
-/* ---- Work: replace with real projects and releases ---- */
-const work = [
-  { type: 'Release', title: 'Project title one', meta: 'Album · 2025', note: 'Placeholder' },
-  { type: 'Release', title: 'Project title two', meta: 'Single · 2025', note: 'Placeholder' },
-  { type: 'Session', title: 'Project title three', meta: 'Drums · 2024', note: 'Placeholder' },
-  { type: 'Score', title: 'Project title four', meta: 'Film · 2024', note: 'Placeholder' },
+import AlbumCarousel from '@/components/AlbumCarousel.vue'
+
+/* ---- Releases I've played on: iTunes collection ids, in carousel order ---- */
+const albumIds = [
+  1676516887, // Sarah Klang – Mercedes
+  1548945650, // Sarah Klang – Virgo
+  1327296883, // Sarah Klang – Love In the Milky Way
+  1479204251, // Sarah Klang – Creamy Blue
+  1877064213, // Eah Jé – Konsten att leva
+  1761586920, // Ludwig Hart – Stay Young
+  1596896600, // Harpo – Stark & sårbar (Så mycket bättre 2021)
+  1539189367, // Isak Danielson – Almost Heaven
+  1756750172, // Isak Danielson – Truly Yours, Isak
+  6785929630, // sixten – Misemotional
+  1713900413, // Simon Russell – Art By You
+  1466596358, // mimi bay – Really
+  1820934086, // mimi bay – big bite mixtape
+  1784175994, // Citizend – The Spiral
 ]
 
 const links = {
@@ -48,6 +60,9 @@ const links = {
       <div class="shell">
         <p class="eyebrow">01 — Selected work</p>
         <h2 class="section-title">Records and releases.</h2>
+        <p class="lede">Records I've played on. Drag to spin, click a cover to open it.</p>
+
+        <AlbumCarousel class="mus-carousel" :ids="albumIds" />
 
         <iframe
           class="mus-embed"
@@ -60,17 +75,6 @@ const links = {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
-
-        <div class="work__grid">
-          <article v-for="item in work" :key="item.title" class="card">
-            <div class="card__thumb">
-              <span class="card__thumb-note">{{ item.note }}</span>
-            </div>
-            <p class="card__type">{{ item.type }}</p>
-            <h3 class="card__title">{{ item.title }}</h3>
-            <p class="card__meta">{{ item.meta }}</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -168,61 +172,16 @@ const links = {
   border-top: 1px solid var(--line);
 }
 
+.mus-carousel {
+  margin-top: 2.5rem;
+}
+
 .mus-embed {
   display: block;
-  margin-top: 2.75rem;
+  margin-top: 3.5rem;
   border-radius: var(--radius);
 }
 
-.work__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem 1.25rem;
-  margin-top: 2.75rem;
-}
-
-.card__thumb {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius);
-  border: 1px dashed var(--line-strong);
-  margin-bottom: 1rem;
-  background: radial-gradient(90% 90% at 30% 20%, rgba(245, 181, 68, 0.22), transparent 70%),
-    var(--ink-700);
-  transition: transform 0.35s var(--ease);
-}
-
-.card:hover .card__thumb {
-  transform: translateY(-4px);
-}
-
-.card__thumb-note {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.card__type {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.card__title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  margin-top: 0.35rem;
-}
-
-.card__meta {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-}
 
 /* ---------- contact ---------- */
 .contact-card {
