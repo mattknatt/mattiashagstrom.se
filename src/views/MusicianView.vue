@@ -24,12 +24,11 @@ const links = {
             Drummer · songwriter · producer
           </p>
           <h1 class="section-title">
-            Songs, sessions,<br />
-            <em>sound design.</em>
+            Live, sessions,<br />
+            <em>production.</em>
           </h1>
           <p class="lede">
-            Placeholder copy — describe the instruments you play, the rooms you record in, and
-            the kind of collaboration you take on.
+            I do recordings and production from my studio in Gothenburg, as well as live shows and touring.
           </p>
           <div class="mus-hero__actions">
             <a class="btn btn--solid" href="#work">Hear the music</a>
@@ -38,7 +37,7 @@ const links = {
         </div>
 
         <figure class="mus-hero__avatar">
-          <img src="/images/musician.jpg" alt="Mattias before a concert" />
+          <img src="/images/musician-avatar.jpg" alt="Mattias before a concert" width="800" height="800" />
           <figcaption>Mattias Hagström</figcaption>
         </figure>
       </div>
@@ -53,7 +52,7 @@ const links = {
         <iframe
           class="mus-embed"
           title="Spotify playlist"
-          src="https://open.spotify.com/embed/playlist/7IglWfa9LnihddunNv0cYS?utm_source=generator&theme=0"
+          src="https://open.spotify.com/embed/playlist/7IglWfa9LnihddunNv0cYS"
           width="100%"
           height="352"
           frameborder="0"

@@ -45,14 +45,6 @@ const skills = [
     items: ['MySQL', 'PostgreSQL', 'Docker', 'Maven', 'Fly.io', 'GitHub Actions', 'JUnit 5 / AssertJ', 'Git'],
   },
 ]
-
-const confidence = [
-  { label: 'Java', value: 85 },
-  { label: 'Spring Boot', value: 70 },
-  { label: 'JPA / ORM', value: 75 },
-  { label: 'SQL', value: 68 },
-  { label: 'Docker', value: 55 },
-]
 </script>
 
 <template>
@@ -91,7 +83,7 @@ const confidence = [
     <section id="projects" class="section dev-projects">
       <div class="shell">
         <p class="eyebrow">01 — Projects</p>
-        <h2 class="section-title">Things I've shipped.</h2>
+        <h2 class="section-title">Things I've built.</h2>
 
         <div class="projects__grid">
           <a
@@ -135,38 +127,25 @@ const confidence = [
 
     <!-- About -->
     <section id="dev-about" class="section dev-about">
-      <div class="shell about__grid">
-        <div>
-          <p class="eyebrow">03 — About</p>
-          <h2 class="section-title">Below the surface.</h2>
-          <div class="about__text">
-            <p>
-              I'm a Java developer student based in <strong>Gothenburg, Sweden</strong>, currently
-              at IT-Högskolan. My focus is on backend systems — the kind of work that happens below
-              the surface.
-            </p>
-            <p>
-              I enjoy designing data models, wiring up repositories, and making sure services talk
-              to databases cleanly and reliably. I've contributed to both solo and
-              <strong>group projects</strong>, taking ownership of API integrations, persistence
-              layers, and system initialization logic.
-            </p>
-            <p>
-              Currently deepening my knowledge of the <strong>Spring ecosystem</strong>, REST API
-              design, and clean architecture patterns.
-            </p>
-          </div>
-        </div>
-
-        <div class="stats">
-          <p class="skill-group__label">Skill confidence</p>
-          <div v-for="stat in confidence" :key="stat.label" class="stat">
-            <span class="stat__label">{{ stat.label }}</span>
-            <div class="stat__bar" role="meter" :aria-valuenow="stat.value" aria-valuemin="0" aria-valuemax="100" :aria-label="stat.label">
-              <div class="stat__fill" :style="{ width: stat.value + '%' }"></div>
-            </div>
-            <span class="stat__val">{{ stat.value }}%</span>
-          </div>
+      <div class="shell">
+        <p class="eyebrow">03 — About</p>
+        <h2 class="section-title">Below the surface.</h2>
+        <div class="about__text">
+          <p>
+            I'm a Java developer student based in <strong>Gothenburg, Sweden</strong>, currently
+            at IT-Högskolan. My focus is on backend systems — the kind of work that happens below
+            the surface.
+          </p>
+          <p>
+            I enjoy designing data models, wiring up repositories, and making sure services talk
+            to databases cleanly and reliably. I've contributed to both solo and
+            <strong>group projects</strong>, taking ownership of API integrations, persistence
+            layers, and system initialization logic.
+          </p>
+          <p>
+            Currently deepening my knowledge of the <strong>Spring ecosystem</strong>, REST API
+            design, and clean architecture patterns.
+          </p>
         </div>
       </div>
     </section>
@@ -419,69 +398,18 @@ const confidence = [
 }
 
 /* ---------- about ---------- */
-.about__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: start;
-}
-
 .about__text {
   margin-top: 1.5rem;
   color: var(--text-dim);
   font-size: 0.98rem;
   line-height: 1.8;
-  max-width: 54ch;
+  max-width: 72ch;
 }
 
 .about__text p + p {
   margin-top: 1rem;
 }
 
-.stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  padding: clamp(1.5rem, 3vw, 2rem);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 60%);
-  align-self: center;
-}
-
-.stat {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.88rem;
-}
-
-.stat__label {
-  min-width: 96px;
-  color: var(--text-dim);
-}
-
-.stat__bar {
-  flex: 1;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--ink-600);
-  overflow: hidden;
-}
-
-.stat__fill {
-  height: 100%;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--cool-2), var(--cool-1));
-}
-
-.stat__val {
-  min-width: 2.5rem;
-  text-align: right;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-faint);
-}
 
 /* ---------- contact ---------- */
 .contact-card {
