@@ -3,8 +3,10 @@ import { RouterLink } from 'vue-router'
 import SplitReveal from '@/components/SplitReveal.vue'
 
 /* ---- Hero: swap the two `image` paths for your own photos ---- */
+const base = import.meta.env.BASE_URL
+
 const musician = {
-  image: '/images/musician.jpg',
+  image: base + 'images/musician.jpg',
   alt: 'Picture of Mattias before a concert',
   label: 'Musician',
   line: 'Drummer, songwriter and producer.',
@@ -13,7 +15,7 @@ const musician = {
 }
 
 const developer = {
-  image: '/images/developer.png',
+  image: base + 'images/developer.png',
   alt: 'Mattias as pixelart',
   label: 'Developer',
   line: 'Software developer building fullstack applications.',

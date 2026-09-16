@@ -6,6 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Set by the deploy workflow: "/<repo>/" on github.io, "/" on a custom domain.
+  base: process.env.BASE_PATH || '/',
   plugins: [
     vue(),
     vueDevTools(),
