@@ -53,12 +53,8 @@ const skills = [
     <section class="section dev-hero">
       <div class="shell dev-hero__grid">
         <div>
-          <p class="eyebrow dev-hero__eyebrow">
-            <span class="dev-hero__dot" aria-hidden="true"></span>
-            Java developer student · Gothenburg
-          </p>
           <h1 class="section-title">
-            Backend <em>engineer</em><br />
+            Backend engineer<br />
             in training.
           </h1>
           <p class="lede">
@@ -82,7 +78,6 @@ const skills = [
     <!-- Projects -->
     <section id="projects" class="section dev-projects">
       <div class="shell">
-        <p class="eyebrow">01 — Projects</p>
         <h2 class="section-title">Things I've built.</h2>
 
         <div class="projects__grid">
@@ -111,7 +106,6 @@ const skills = [
     <!-- Skills -->
     <section id="skills" class="section dev-skills">
       <div class="shell">
-        <p class="eyebrow">02 — Skills</p>
         <h2 class="section-title">The toolbox.</h2>
 
         <div class="skills__grid">
@@ -128,7 +122,6 @@ const skills = [
     <!-- About -->
     <section id="dev-about" class="section dev-about">
       <div class="shell">
-        <p class="eyebrow">03 — About</p>
         <h2 class="section-title">Below the surface.</h2>
         <div class="about__text">
           <p>
@@ -187,21 +180,6 @@ const skills = [
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: clamp(2rem, 6vw, 5rem);
-}
-
-.dev-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--cool-1);
-}
-
-.dev-hero__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--cool-1);
-  box-shadow: 0 0 12px var(--cool-glow);
 }
 
 .dev-hero .section-title {

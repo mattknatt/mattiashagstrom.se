@@ -31,13 +31,9 @@ const links = {
     <section class="section mus-hero">
       <div class="shell mus-hero__grid">
         <div>
-          <p class="eyebrow mus-hero__eyebrow">
-            <span class="mus-hero__dot" aria-hidden="true"></span>
-            Drummer · songwriter · producer
-          </p>
           <h1 class="section-title">
             Live, sessions,<br />
-            <em>production.</em>
+            production.
           </h1>
           <p class="lede">
             I do recordings and production from my studio in Gothenburg, as well as live shows and touring.
@@ -58,7 +54,6 @@ const links = {
     <!-- Work -->
     <section id="work" class="section mus-work">
       <div class="shell">
-        <p class="eyebrow">01 — Selected work</p>
         <h2 class="section-title">Records and releases.</h2>
         <p class="lede">Records I've worked on. Drag to spin, click a cover to open it.</p>
 
@@ -109,21 +104,6 @@ const links = {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: clamp(2rem, 6vw, 5rem);
-}
-
-.mus-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--warm-1);
-}
-
-.mus-hero__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--warm-1);
-  box-shadow: 0 0 12px var(--warm-glow);
 }
 
 .mus-hero .section-title {

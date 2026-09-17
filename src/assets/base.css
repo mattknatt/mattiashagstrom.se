@@ -2,6 +2,7 @@
    Design tokens + reset
    Warm palette = the musician side. Cool palette = the developer side.
 ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   /* Neutrals */
@@ -27,7 +28,7 @@
   --cool-glow: rgba(99, 211, 232, 0.30);
 
   /* Type */
-  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-display:'Noto Serif', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 

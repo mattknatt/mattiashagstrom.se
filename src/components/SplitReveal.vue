@@ -315,10 +315,10 @@ onBeforeUnmount(stopHint)
 
 .center__name {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(2.6rem, 9vw, 7rem);
+  font-weight: 340;
+  font-size: clamp(2rem, 7vw, 6rem);
   line-height: 0.98;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   white-space: nowrap;
 }
 
